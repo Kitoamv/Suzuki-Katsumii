@@ -11,7 +11,6 @@ const path = require("path");
 const moment = require('moment');
 const os = require('os');
 
-const mongoose = require("mongoose");
 const Guild = require("./models/guild");
 const Message = require("./models/message");
 
@@ -31,7 +30,6 @@ client.afk = new Map();
 client.commands = new Collection();
 client.alias = new Collection();
 client.categories = fs.readdirSync("./commands/")
-client.mongoose = require("./utils/mongoose.js");
 
 let purple = botconfig.purple;
 let cooldown = new Set();
@@ -44,12 +42,6 @@ config({
 ///////////////////////////////////////////////////////////////////////////////
 //                        get config values.                                 //
 ///////////////////////////////////////////////////////////////////////////////
-
-mongoose.connect(process.env.DB, {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-    useCreateIndex: true
-})
 
 client.coonfig = {
     TRN_APIKEY: process.env.TRN_APIKEY,
