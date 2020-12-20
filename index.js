@@ -31,12 +31,6 @@ client.alias = new Collection();
 client.categories = fs.readdirSync("./commands/")
 client.mongoose = require("./utils/mongoose.js");
 
-mongoose.connect(process.env.DB, {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-    useCreateIndex: true
-})
-
 let purple = botconfig.purple;
 let cooldown = new Set();
 let cdseconds = 5;
