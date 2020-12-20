@@ -1,3 +1,4 @@
+const config = require('../../JSON/config.json');
 const { checkBotOwner } = require("./../../utils/permissions")
 const cd = new Set();
 
