@@ -140,8 +140,6 @@ client.on("ready", () => {
 });
 
 ///////////////////////////////////////////////////////////////////////////////
-//                           Prefixo do Bot                                  //
-///////////////////////////////////////////////////////////////////////////////
 
 client.on("message", async message => {
     const prefix = "_";
@@ -161,135 +159,8 @@ client.on("message", async message => {
 
     if (command) 
         command.run(client, message, args);
-};
-
-
-///////////////////////////////////////////////////////////////////////////////
-
-
-  let messageArray = message.content.split(" ");
-  let cmd = messageArray[0];
-  let args = messageArray.slice(1);
-
-  let commandfile = client.commands.get(cmd.slice(prefix.length));
-  if(commandfile) commandfile.run(client,message,args);
-
-  setTimeout(() => {
-    cooldown.delete(message.author.id)
-  }, cdseconds * 1000)
-
-    if (message.author.bot) return;
-    if (!message.guild) return;
-    if (!message.content.startsWith(prefix)) return;
-    if (!message.member) message.member = message.guild.fetchMember(message);
-
-    if (cmd.length === 0) return;
-
-    let command = client.commands.get(cmd);
-    if (!command) command = client.commands.get(client.aliases.get(cmd));
-
-    if (command)
-        command.run(client, message, args);
 });
 
-///////////////////////////////////////////////////////////////////////////////
-///              O Bot Entrou ou saiu em algum servidor                     ///
-///////////////////////////////////////////////////////////////////////////////
-
-client.on("guildMemberAdd", async (member) => {
-
-    const getData = await Guild.findOne({
-
-        guildID: member.guild.id
-
-    }).catch(err => console.error(err));
-
-    const getMessage = await Message.findOne({
-
-        guildID: member.guild.id
-
-    }).catch(err => console.error(err));
-
-    let welcomeChannel = getData.welcomeChannelID;
-
-    let welcomeEmbed = new MessageEmbed()
-    .setColor("#55efc4")
-
-    if(getData.welcome === 'on') {
-
-        if(!getMessage.welcomemsg) {
-
-            let welcomemsg = `<@${member.id}> joined the server.`;
-            welcomeEmbed.setDescription(welcomemsg)
-            client.channels.cache.get(welcomeChannel).send(welcomeEmbed)
-
-        } else {
-
-            let welcomemsg = getMessage.welcomemsg.replace(/-/, `<@${member.id}>`);
-            welcomeEmbed.setDescription(welcomemsg)
-            client.channels.cache.get(welcomeChannel).send(welcomeEmbed)
-
-        }
-
-    } else if(getData.welcome === 'off'){
-
-        return;
-
-    }
-
-    if(member.guild.id == '549789888115900428') {
-
-        let role = member.guild.roles.cache.find(role => role.name.toLowerCase() === "apprenti ninja");
-        member.roles.add(role)
-
-    }
-
-})
-
-client.on("guildMemberRemove", async (member) => {
-
-    const getData = await Guild.findOne({
-
-        guildID: member.guild.id
-
-    }).catch(err => console.error(err))
-
-    const getMessage = await Message.findOne({
-
-        guildID: member.guild.id
-
-    }).catch(err => console.error(err))
-
-    let goodbyeChannel = getData.goodbyeChannelID;
-
-    let goodbyeEmbed = new MessageEmbed()
-    .setColor("#ffeaa7")
-
-    if(getData.goodbye === 'on') {
-
-        if(!getMessage.goodbyemsg) {
-
-            let goodbyemsg = `<@${member.id}> left the server.`;
-            goodbyeEmbed.setDescription(goodbyemsg)
-            client.channels.cache.get(goodbyeChannel).send(goodbyeEmbed)
-
-        } else {
-
-            console.log(goodbyeChannel)
-            let goodbyemsg = getMessage.goodbyemsg.replace(/-/, `<@${member.id}>`);
-            goodbyeEmbed.setDescription(goodbyemsg)
-            console.log(goodbyemsg)
-            client.channels.cache.get(goodbyeChannel).send(goodbyeEmbed)
-
-        }
-
-    } else if(getData.goodbye === 'off') {
-
-        return;
-
-    }
-
-})
 
 client.mongoose.init();
 client.login("NjI3OTA1OTE5MTcwMzc5ODAz.XZDc9Q.ak7WZ9Em_kFRu6QhAUoUpi3OB7E");
