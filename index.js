@@ -9,6 +9,7 @@ const ms = require('ms');
 const path = require("path");
 const moment = require('moment');
 const os = require('os');
+const chalk = require('chalk');
 
 const mongoose = require("mongoose");
 const Guild = require("./models/guild");
