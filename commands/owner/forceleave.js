@@ -1,3 +1,5 @@
+const { checkBotOwner } = require("./../../utils/permissions")
+
 module.exports = {
     name: "forceleave",
     category: "owner",
