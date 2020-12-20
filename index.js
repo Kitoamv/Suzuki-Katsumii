@@ -4,7 +4,6 @@
 const { Client, Collection, MessageEmbed, MessageAttachment, Util } = require('discord.js');
 const Discord = require("discord.js");
 const { config } = require("dotenv");
-const chalk = require('chalk')
 
 const ms = require('ms');
 const path = require("path");
@@ -22,7 +21,6 @@ const client = new Client({ disableEveryone: false });
 const queue = new Map();
 require('dotenv').config()
 const cfg = require('./JSON/config.js');
-const { load } = require("./utils/utils")
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -33,6 +31,12 @@ client.alias = new Collection();
 client.categories = fs.readdirSync("./commands/")
 client.mongoose = require("./utils/mongoose.js");
 
+mongoose.connect(process.env.DB, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useCreateIndex: true
+})
+
 let purple = botconfig.purple;
 let cooldown = new Set();
 let cdseconds = 5;
@@ -41,15 +45,17 @@ config({
     path: __dirname + "/.env"
 });
 
+//////////////////////////////////////////////
+//             Console Chalk                //
+//////////////////////////////////////////////
+
+client.devsLog = `${chalk.cyanBright('[Devs - Log]')}`
+client.devsError = `${chalk.redBright('[Devs - Error]')}`
+client.websLog = `${chalk.greenBright('[Devs Web - Log]')}`
+
 ///////////////////////////////////////////////////////////////////////////////
 //                        get config values.                                 //
 ///////////////////////////////////////////////////////////////////////////////
-
-mongoose.connect(process.env.DB, {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-    useCreateIndex: true
-})
 
 client.coonfig = {
     TRN_APIKEY: process.env.TRN_APIKEY,
@@ -137,14 +143,6 @@ client.on("ready", () => {
     console.log(`| channels: ${client.channels.array().length} |`);
     console.log("+--------------+");
 });
-
-//////////////////////////////////////////////
-//             Console Chalk                //
-//////////////////////////////////////////////
-
-client.devsLog = `${chalk.cyanBright('[Devs - Log]')}`
-client.devsError = `${chalk.redBright('[Devs - Error]')}`
-client.websLog = `${chalk.greenBright('[Devs Web - Log]')}`
 
 ///////////////////////////////////////////////////////////////////////////////
 //                           Prefixo do Bot                                  //
@@ -300,4 +298,4 @@ client.on("guildMemberRemove", async (member) => {
 })
 
 client.mongoose.init();
-client.login(process.env.TOKEN);
+client.login("NjI3OTA1OTE5MTcwMzc5ODAz.XZDc9Q.ak7WZ9Em_kFRu6QhAUoUpi3OB7E");
