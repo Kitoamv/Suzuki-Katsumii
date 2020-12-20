@@ -181,7 +181,7 @@ client.on("message", async message => {
     if (message.author.bot) return;
     if (!message.guild) return;
     if (!message.content.startsWith(prefix)) return;
-    if (!message.member) message.member = await message.guild.fetchMember(message);
+    if (!message.member) message.member = message.guild.fetchMember(message);
 
     if (cmd.length === 0) return;
 
