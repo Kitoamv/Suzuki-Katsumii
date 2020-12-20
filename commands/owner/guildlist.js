@@ -1,4 +1,5 @@
 const { RichEmbed } = require('discord.js');
+const { checkBotOwner } = require("./../../utils/permissions")
 
 module.exports = {
     name: "guildlist",
