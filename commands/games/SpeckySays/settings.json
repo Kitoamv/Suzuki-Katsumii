@@ -1,0 +1,75 @@
+{
+   "minigames":{
+      "dontWrite":true,
+      "react":true,
+      "reactSpecific":true,
+      "solveEquation":true,
+      "write":true,
+      "writeSpecific":true,
+      "oppositeDay":true,
+      "status":true,
+      "writeDM":true,
+      "writeDMSpecific":true
+   },
+   "fakeStarts":[
+     "Certo,",
+     "Okay,",
+     "Agora!,",
+     "Katsumi diz",
+     "Suzukii diz",
+     "Suzuki disse",
+     "Por Favor",
+     "Katsumi disse",
+     "Suzuki mandou",
+     "Suzuqui diz",
+     "Zusuki diz",
+     "Suxuki diz",
+     "Suzuki falou",
+     "Suzuki gritou"
+   ],
+   "tasks":{
+      "say":[
+         "Olá",
+         "Oi",
+         "BOOM",
+         "Kaboom",
+         "Eu amo a suzuki ",
+         "Este é o melhor jogo que já participei",
+         "Por que ainda estamos aqui apenas para sofrer",
+         "você é legal",
+         "bruh",
+         "O Steve é corno",
+         "O DK é corno",
+         "Você é branco bro",
+         "NEZUKO",
+         "Ala o corno",
+         "E Morreu",
+         "O loko bicho",
+         "ta pegando fogo bicho",
+         "Mais um desafio alek",
+         "Boa noite bruno",
+         "Ricardo Kiddos",
+         "Ricardo Millos",
+         "O Bagulho é hardicore"
+      ],
+      "react":[
+         "🤖",
+         "👍",
+         "🔥",
+         "🤔",
+         "🐭",
+         "🍌",
+         "💤",
+         "💀",
+         "👀"
+      ],
+      "status":[
+         "online",
+         "idle",
+         "dnd",
+         "offline"
+      ],
+      "opposite_day":true
+   },
+   "opposite_day":true
+}

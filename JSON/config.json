@@ -1,0 +1,122 @@
+{
+	"token": "NTM1ODQ2OTE2MjQ0NjM1Njc4.XEH0VA.YP4qMWcm_Gmk8c6g4Yi_5XtCFio",
+	"google_api_key": "AIzaSyDL8rRGyY3vpTXZzUmlrmcg9bRCv0Bs0Ro",
+	"youtubeToken": "AIzaSyDL8rRGyY3vpTXZzUmlrmcg9bRCv0Bs0Ro",
+	"botOwner": ["287024484630659073"],
+	"whitelistedGuilds":["549789888115900428", "582549175967809541"],
+	"errorLogChannel": "789819028561461258",
+	"verificationLogs":"789819306032103424",
+	"adminRoleID":"789817195579834369",
+  "prefix": "!!",
+	  "red": "#b70000",
+	  "orange": "#ff6a00",
+	  "green": "#00ff26",
+	  "purple": "#d604cf",
+   "question_weight" : [
+	      1 , 14, 11, 1 , 20, 1 , 1 ,
+	      6 , 5 , 6 , 4 , 1 , 20, 17,
+	      17 , 5 , 1 , 6 , 4 , 10, 17 ,
+	      5 , 9 , 4 , 3 , 20, 1 , 4 ,
+	      20
+	  ],
+	  "mute_perm" : [
+	      ["369108742077284353", -1],
+	      ["528942452116160519", -1],
+	      ["635533001312305152", -1],
+	      ["325668893446373376", 3600],
+	      ["595667274707370024", 3600],
+	      ["635533688196694016", 3600]
+	  ],
+	  "mudae_ban" : [
+	    ["635533001312305152", -1],
+	    ["635533688196694016", 1800]
+	  ],
+	  "mudae_immune" : [
+	    "635533001312305152", "635533688196694016"
+	  ],
+	  "mute_immune" : [
+	      "369108742077284353", "595667274707370024", "326398084185718794"
+	  ],
+	  "verify_perm" : [
+	      "529313445074698261", "595667274707370024", "369108742077284353"
+	  ],
+	  "pp_channel": [
+	    "325827427446161413",
+	    "549109230284701718",
+	    "635535610739687435",
+	    "643669133975617546",
+	    "635549568854917150"
+	  ],
+	  "member_cooldown": 180,
+	  "management_channel": "server-management",
+	  "log_channel": "bills",
+	  "report_channel": "reports",
+	  "activity_list": [
+	    ["LiSA - unlasting with Rian8337", "LISTENING"],
+	    ["SAO Alicization: War of Underworld Episode ", "WATCHING"],
+	    ["a!help | a!modhelp", "PLAYING"],
+	    ["Rian8337 develop me!", "WATCHING"]
+	  ],
+	  "require_api": [
+	    "completepp",
+	    "completescore",
+	    "daily",
+	    "dancourse",
+	    "emailcheck",
+	    "fancy",
+	    "levelid",
+	    "levelme",
+	    "matchstart",
+	    "matchsubmit",
+	    "pfid",
+	    "pfme",
+	    "pp",
+	    "ppsubmit",
+	    "profileid",
+	    "profileme",
+	    "profilesearch",
+	    "recent",
+	    "recentme",
+	    "recent5",
+	    "recent5me",
+	    "rs",
+	    "score",
+	    "scoresubmit",
+	    "userbind"
+	  ],
+	  "avatar_list": [
+	    "https://cdn.discordapp.com/attachments/582876997668044801/689968887126556862/Sem_Titulo-1.jpg",
+	    "https://i.imgur.com/Fspbt08.png",
+	    "https://i.imgur.com/IXgYLNh.png",
+	    "https://i.imgur.com/E7EbgS4.png",
+	    "https://i.imgur.com/lFbSoEK.png",
+	    "https://i.imgur.com/FJbkaPi.png",
+	    "https://i.imgur.com/AaeiXgt.png",
+	    "https://i.imgur.com/5yFCD3N.png",
+	    "https://i.imgur.com/bXrgwzF.png",
+	    "https://i.imgur.com/AYXXNS7.png",
+	    "https://i.imgur.com/dtB1jf8.png",
+	    "https://i.imgur.com/zSJuARr.png",
+	    "https://i.imgur.com/B10hWv2.png",
+	    "https://i.imgur.com/OduDhM4.png",
+	    "https://i.imgur.com/ORVeEIS.jpg"
+	  ],
+	  "colors": {
+	      "defaultColor": "headRed",
+	      "headRed": "#CE0000",
+	      "online": "#43B581",
+	      "idle": "#BD8700",
+	      "dnd": "#F04747",
+	      "offline": "#747F8D",
+	      "blurple": "#7289DA",
+	      "white": "#FFFFFF",
+	      "black": "#000000",
+	      "gold": "#daa520",
+	      "orange": "#FF470F",
+	      "aqua": "#33A1EE",
+	      "green": "#00FF00",
+	      "noColor": "#36393F",
+	      "red": "F90E0E",
+	      "discordLink": "#0F96C5"
+	      }
+	}
