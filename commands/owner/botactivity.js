@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const { checkBotOwner } = require("./../../utils/permissions")
 
 module.exports = {
     name: "botactivity",
