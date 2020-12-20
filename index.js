@@ -161,7 +161,6 @@ client.on("message", async message => {
 
     if (command) 
         command.run(client, message, args);
-    }
 });
 
 
