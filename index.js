@@ -291,5 +291,4 @@ client.on("guildMemberRemove", async (member) => {
 
 })
 
-client.mongoose.init();
 client.login(process.env.TOKEN);
