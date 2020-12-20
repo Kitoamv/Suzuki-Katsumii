@@ -144,26 +144,25 @@ client.on("ready", () => {
 ///////////////////////////////////////////////////////////////////////////////
 
 client.on("message", async message => {
+    const prefix = "_";
 
-  if(message.author.bot) return;
-  if(message.channel.type === "dm") return;
+    if (message.author.bot) return;
+    if (!message.guild) return;
+    if (!message.content.startsWith(prefix)) return;
+    if (!message.member) message.member = await message.guild.fetchMember(message);
 
-  let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
-  if(!prefixes[message.guild.id]){
-    prefixes[message.guild.id] = {
-      prefixes: botconfig.prefix
-    };
-  }
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    const cmd = args.shift().toLowerCase();
+    
+    if (cmd.length === 0) return;
+    
+    let command = client.commands.get(cmd);
+    if (!command) command = client.commands.get(client.aliases.get(cmd));
 
-  let prefix = prefixes[message.guild.id].prefixes;
-  if(!message.content.startsWith(prefix)) return;
-  if(cooldown.has(message.author.id)){
-    message.delete();
-    return message.reply("Você tem que esperar 5 segundos entre os comandos.")
-  }
-  if(!message.member.hasPermission("ADMINISTRATOR")){
-    cooldown.add(message.author.id);
-  }
+    if (command) 
+        command.run(client, message, args);
+});
+
 
 ///////////////////////////////////////////////////////////////////////////////
 
