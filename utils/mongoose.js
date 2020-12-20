@@ -14,8 +14,14 @@ module.exports = {
             family: 4
         };
 
-        mongoose.connect('mongodb+srv://suzukikat:54323210ab@suzukikatsumi.tdhsf.mongodb.net/Suzukikatsumi?retryWrites=true&w=majority', dbOptions);
-        mongoose.set('useFindAndModify', false);
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://suzukikat:<password>@suzukikatsumi.tdhsf.mongodb.net/<dbname>?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});        mongoose.set('useFindAndModify', false);
         mongoose.Promise = global.Promise;
 
         mongoose.connection.on('connected', () => {
