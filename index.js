@@ -162,4 +162,4 @@ client.on("message", async message => {
 
 
 client.mongoose.init();
-client.login("NjI3OTA1OTE5MTcwMzc5ODAz.XZDc9Q.ak7WZ9Em_kFRu6QhAUoUpi3OB7E");
+client.login("TOKEN");
